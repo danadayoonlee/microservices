@@ -1,0 +1,41 @@
+<!--
+Project Information
+Student Name: Dayoon Lee
+Student Number: 301034178
+Submission Date: 2021/11/29
+-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>List</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<h2 style="margin-top: 10%;">List of Reviews</h2>
+<table class="table table-striped">
+        <thead>
+         <tr>
+           <th scope="col">Id</th>
+           <th scope="col">Name</th>
+           <th scope="col">Date</th>
+           <th scope="col">Comment</th>
+           <th scope="col">Rate</th>
+           <th scope="col">Product Id</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr th:each="r:${reviews}">
+          	 <th scope="row" th:text="${r.id}">Id</th>
+             <td th:text="${r.name}">Name</td>
+             <td th:text="${r.date}">Date</td>
+             <td th:text="${r.comment}">Comment</td>
+             <td th:text="${r.rate}">Rating</td>
+             <td th:text="${r.productId}">Product Id</td>   
+          </tr>
+        </tbody>
+    </table>
+</body>
+</html>
